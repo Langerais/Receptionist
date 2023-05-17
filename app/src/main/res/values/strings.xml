@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name" translatable="false">Hotel Management System</string>
+    <string name="e_mail" translatable="false">E-mail</string>
+    <string name="id" translatable="false">ID</string>
+    <string name="ERR" translatable="false">ERR</string>
+    <string name="noEmail" translatable="false">No Email</string>
+    <string name="noPhone" translatable="false">No Phone</string>
+    <string name="search">Search</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="number">Number</string>
+    <string name="capacity">Capacity</string>
+    <string name="beds">Beds</string>
+    <string name="price">Price</string>
+    <string name="room">Room</string>
+    <string name="total_price">Total:</string>
+    <string name="days">Days:</string>
+    <string name="nan" translatable="false">NaN</string>
+    <string name="nameSt">Name</string>
+    <string name="surnameSt">Surname</string>
+    <string name="guest">Guest </string>
+    <string name="phone">Phone</string>
+    <string name="total">Total:</string>
+    <string name="nights">Nights:</string>
+    <string name="emailErr">Incorrect email address</string>
+    <string name="phoneErr">Incorrect phone number</string>
+    <string name="mandatoryErr">This field is mandatory</string>
+    <string name="fromDate">From</string>
+    <string name="toDate">To</string>
+    <string name="reservingError">Unable to create new reservation</string>
+    <string name="reservingComplete">New reservation created</string>
+    <string name="newGuestError">Unable to create new guest</string>
+    <string name="existingGuestError">Unable to import existing guest</string>
+    <string name="reservation">Reservation</string>
+    <string name="f">for</string>
+    <string name="created">created</string>
+    <string name="New">New</string>
+    <string name="existing">Existing</string>
+    <string name="objDeletePopup">Are you sure you want to delete %s %s ?\n</string>
+    <string name="objDeletePopupSure">Are you REALLY-REALLY sure you want to delete %s %s ?\n</string>
+    <string name="objDeleted">is deleted</string>
+    <string name="deleted">DELETED</string>
+    <string name="deletedErr">DELETING ERROR</string>
+    <string name="notFound">not found</string>
+    <string name="reservationSendEmail" translatable="false">Reservation ID: %s \nFrom: %s \nTo: %s\nGuest: %s\nEmail: %s\nPhone: %s\nTotal price: %s</string>
+    <string name="guests_database">Guests database</string>
+    <string name="reservations_calendar">Reservations calendar</string>
+    <string name="reserve_activity">Search for room and create reservation</string>
+    <string name="open_arrival_date_picker">Open Arrival Date Picker</string>
+    <string name="open_departure_date_picker">Open departure date picker</string>
+    <string name="goToGuestReserve">Go for guest credentials</string>
+    <string name="reservationsSearch">Search for reservations</string>
+    <string name="reset_reservations_search">Reset reservations search</string>
+    <string name="guest_details">Show the guest details</string>
+    <string name="reservation_conformation_window">Open reservation deletion conformation window</string>
+    <string name="send_reservation">Send reservation details via default app</string>
+    <string name="email_to_guest">Send email to guest\'s address</string>
+    <string name="call_to_guest">Call to guest\'s phone number</string>
+    <string name="search_guests">Search guests</string>
+    <string name="reset_guest_search">Reset guest search</string>
+    <string name="guest_deletion_confirmation_window">Open guest deletion confirmation window</string>
+    <string name="guest_reservations_or_new_reservation">Guest\'s reservations or selecting guest for new reservation</string>
+    <string name="create_new_reservation">Create new reservation for the guest</string>
+    <string name="pick_existing_guest">Pick existing guest from the list</string>
+    <string name="create_new_guest_or_import_existing">create NEW guest or import EXISTING</string>
+
+</resources>

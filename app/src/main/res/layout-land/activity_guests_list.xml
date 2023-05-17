@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/guestListLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_animation_list"
+    tools:context=".GuestsListActivity">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/guestSearchInputGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="textNameSearch,textSurnameSearch,textIdGuest,textGuestsEmailSearch,textGuestsPhoneSearch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textNameSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textGuestsEmailSearch"
+        app:layout_constraintEnd_toStartOf="@id/textSurnameSearch"
+
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintHorizontal_weight="18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/nameSt"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textSurnameSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textNameSearch"
+        app:layout_constraintEnd_toStartOf="@+id/dividerVGuest"
+        app:layout_constraintHorizontal_weight="18"
+        app:layout_constraintStart_toEndOf="@+id/textNameSearch"
+        app:layout_constraintTop_toTopOf="@+id/textNameSearch"
+        app:layout_constraintVertical_weight="30">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/surnameSt"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textGuestsEmailSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textGuestsPhoneSearch"
+        app:layout_constraintEnd_toEndOf="@+id/textSurnameSearch"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintStart_toStartOf="@+id/textNameSearch"
+        app:layout_constraintTop_toBottomOf="@+id/textNameSearch"
+        app:layout_constraintVertical_weight="15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textGuestsPhoneSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textIdGuest"
+        app:layout_constraintEnd_toEndOf="@+id/textSurnameSearch"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintStart_toStartOf="@+id/textNameSearch"
+        app:layout_constraintTop_toBottomOf="@+id/textGuestsEmailSearch"
+        app:layout_constraintVertical_weight="15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textIdGuest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider8"
+        app:layout_constraintEnd_toStartOf="@+id/guestDeleteBtn"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintHorizontal_weight="30"
+        app:layout_constraintStart_toStartOf="@+id/textGuestsPhoneSearch"
+        app:layout_constraintTop_toBottomOf="@+id/textGuestsPhoneSearch"
+        app:layout_constraintVertical_weight="15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/id"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/guestsSearchBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/search_guests"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/textIdGuest"
+        app:layout_constraintEnd_toEndOf="@+id/textGuestsPhoneSearch"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintHeight_min="20dp"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@+id/guestsResetBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textGuestsPhoneSearch"
+        app:srcCompat="@drawable/searchbtn_2" />
+
+    <ImageButton
+        android:id="@+id/guestsResetBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/reset_guest_search"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/guestsSearchBtn"
+        app:layout_constraintEnd_toStartOf="@id/guestsSearchBtn"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintHeight_min="20dp"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@+id/guestDeleteBtn"
+        app:layout_constraintTop_toTopOf="@+id/guestsSearchBtn"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_max="60dp"
+        app:layout_constraintWidth_min="20dp"
+        app:srcCompat="@drawable/resetbtn_2" />
+
+    <ImageButton
+        android:id="@+id/guestDeleteBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/guest_deletion_confirmation_window"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/guestsResetBtn"
+        app:layout_constraintEnd_toStartOf="@+id/guestsResetBtn"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@+id/textIdGuest"
+        app:layout_constraintTop_toTopOf="@+id/guestsResetBtn"
+        app:srcCompat="@drawable/deletebtn" />
+
+    <View
+        android:id="@+id/dividerVGuest"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toStartOf="@+id/reservationsListView"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/textSurnameSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/reservationsListView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:isScrollContainer="true"
+        android:listSelector="@android:color/holo_blue_light"
+        android:paddingTop="5dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="100dp"
+        app:layout_constraintHorizontal_weight="40"
+        app:layout_constraintStart_toEndOf="@+id/dividerVGuest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="70">
+
+    </ListView>
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/guestsReservationsBtn"
+        app:layout_constraintEnd_toStartOf="@+id/dividerVGuest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIdGuest"
+        app:layout_constraintVertical_weight="1" />
+
+    <ImageButton
+        android:id="@+id/guestsReservationsBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/guest_reservations_or_new_reservation"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textGuestsPhoneSearch"
+        app:layout_constraintHorizontal_weight="30"
+        app:layout_constraintStart_toEndOf="@id/space2"
+        app:layout_constraintTop_toBottomOf="@+id/divider8"
+        app:layout_constraintVertical_weight="15"
+        app:srcCompat="@mipmap/reservations_list" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guestsReservationsBtn"
+        app:layout_constraintHorizontal_weight="60"
+        app:layout_constraintStart_toEndOf="@id/sendEmailBtn"
+        app:layout_constraintTop_toBottomOf="@+id/divider8" />
+
+    <TextView
+        android:id="@+id/textGuestEmailPicked"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/textGuestPhonePicked"
+        app:layout_constraintEnd_toEndOf="@+id/space2"
+        app:layout_constraintStart_toStartOf="@+id/space2"
+        app:layout_constraintTop_toTopOf="@+id/space2" />
+
+    <TextView
+        android:id="@+id/textGuestPhonePicked"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/space2"
+        app:layout_constraintEnd_toEndOf="@+id/textGuestEmailPicked"
+        app:layout_constraintStart_toStartOf="@+id/textGuestEmailPicked"
+        app:layout_constraintTop_toBottomOf="@+id/textGuestEmailPicked" />
+
+    <ImageButton
+        android:id="@+id/sendEmailBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/email_to_guest"
+        android:scaleType="fitCenter"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/textGuestEmailPicked"
+        app:layout_constraintEnd_toStartOf="@+id/space2"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textGuestEmailPicked"
+        app:srcCompat="@drawable/emailico" />
+
+    <ImageButton
+        android:id="@+id/phoneCallBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/call_to_guest"
+        android:tint="@drawable/touch_selector"
+        android:soundEffectsEnabled="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/textGuestPhonePicked"
+        app:layout_constraintEnd_toEndOf="@+id/sendEmailBtn"
+        app:layout_constraintStart_toStartOf="@+id/sendEmailBtn"
+        app:layout_constraintTop_toTopOf="@+id/textGuestPhonePicked"
+        app:srcCompat="@drawable/phoneico" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

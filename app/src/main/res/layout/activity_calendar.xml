@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendarActivityView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_animation_list"
+    tools:context=".CalendarActivity">
+
+    <DatePicker
+        android:id="@+id/calendarDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:datePickerMode="calendar"
+        android:scaleX="1.05"
+        android:scaleY="1"
+        android:visibility="invisible"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/reservationsListView"
+        app:layout_constraintEnd_toEndOf="@+id/reservationsListView"
+        app:layout_constraintStart_toStartOf="@+id/reservationsListView"
+        app:layout_constraintTop_toTopOf="@+id/reservationsListView"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
+        android:id="@+id/textFromReservationsSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="bottom"
+        android:padding="8dp"
+        android:text="15/10/2021"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@id/textToReservationsSearch"
+        app:layout_constraintEnd_toStartOf="@+id/fromReservationSearchBtn"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintHorizontal_weight="70"
+        app:layout_constraintStart_toEndOf="@id/fromHint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="10" />
+
+
+    <TextView
+        android:id="@+id/textToReservationsSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="bottom"
+        android:padding="8dp"
+        android:text="16/10/2021"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/textIdReservation"
+        app:layout_constraintEnd_toEndOf="@+id/textFromReservationsSearch"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/textFromReservationsSearch"
+        app:layout_constraintTop_toBottomOf="@+id/textFromReservationsSearch"
+        app:layout_constraintVertical_weight="10" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textIdReservation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintEnd_toStartOf="@+id/textRoomNum"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintHorizontal_weight="20"
+        app:layout_constraintStart_toStartOf="@+id/toHint"
+        app:layout_constraintTop_toBottomOf="@+id/textToReservationsSearch"
+        app:layout_constraintVertical_weight="10">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/id"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/reservationsSearchBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/reservationsSearch"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/textIdReservation"
+        app:layout_constraintEnd_toEndOf="@+id/toReservationSearchBtn"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintHeight_min="20dp"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@id/reservationsResetBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textToReservationsSearch"
+        app:srcCompat="@drawable/searchbtn_2" />
+
+    <ImageButton
+        android:id="@+id/reservationsResetBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/reset_reservations_search"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/reservationsSearchBtn"
+        app:layout_constraintEnd_toStartOf="@+id/reservationsSearchBtn"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintHeight_min="20dp"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@+id/reservationDeleteBtn"
+        app:layout_constraintTop_toTopOf="@+id/reservationsSearchBtn"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_max="60dp"
+        app:layout_constraintWidth_min="20dp"
+        app:srcCompat="@drawable/resetbtn_2" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@id/reservationsListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIdReservation"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <ListView
+        android:id="@+id/reservationsListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:choiceMode="singleChoice"
+        android:isScrollContainer="true"
+        android:listSelector="#9AFB4810"
+        android:paddingTop="5dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/divider8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="100dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider4"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_weight="70">
+
+    </ListView>
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@id/reservationsGuestBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservationsListView"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <ImageButton
+        android:id="@+id/reservationsGuestBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/guest_details"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="30"
+        app:layout_constraintStart_toEndOf="@id/space2"
+        app:layout_constraintTop_toBottomOf="@+id/divider8"
+        app:layout_constraintVertical_weight="12"
+        app:srcCompat="@mipmap/guests" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reservationsGuestBtn"
+        app:layout_constraintHorizontal_weight="60"
+        app:layout_constraintStart_toEndOf="@+id/sendDetailsEmailBtn"
+        app:layout_constraintTop_toBottomOf="@+id/divider8"
+        app:layout_constraintVertical_weight="7" />
+
+    <TextView
+        android:id="@+id/textReservationTotalPicked"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/space2"
+        app:layout_constraintEnd_toEndOf="@+id/space2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/space2"
+        app:layout_constraintTop_toTopOf="@+id/space2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/reservationDeleteBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/reservation_conformation_window"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/reservationsResetBtn"
+        app:layout_constraintEnd_toStartOf="@+id/reservationsResetBtn"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@+id/textRoomNum"
+        app:layout_constraintTop_toTopOf="@+id/reservationsResetBtn"
+        app:srcCompat="@drawable/deletebtn" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textRoomNum"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="5dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textIdReservation"
+        app:layout_constraintEnd_toStartOf="@+id/reservationDeleteBtn"
+        app:layout_constraintHeight_min="40dp"
+        app:layout_constraintHorizontal_weight="20"
+        app:layout_constraintStart_toEndOf="@+id/textIdReservation"
+        app:layout_constraintTop_toTopOf="@+id/textIdReservation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/room"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/fromReservationSearchBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/open_arrival_date_picker"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/textFromReservationsSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_weight="15"
+        app:layout_constraintStart_toEndOf="@+id/textFromReservationsSearch"
+        app:layout_constraintTop_toTopOf="@+id/textFromReservationsSearch"
+        app:srcCompat="@drawable/calendar" />
+
+    <ImageButton
+
+        android:id="@+id/toReservationSearchBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/open_departure_date_picker"
+        android:scaleType="fitCenter"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/textToReservationsSearch"
+        app:layout_constraintEnd_toEndOf="@+id/fromReservationSearchBtn"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_weight="20"
+        app:layout_constraintStart_toStartOf="@+id/fromReservationSearchBtn"
+        app:layout_constraintTop_toTopOf="@+id/textToReservationsSearch"
+        app:srcCompat="@drawable/calendar" />
+
+    <TextView
+        android:id="@+id/fromHint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="end|bottom"
+        android:maxLines="1"
+        android:paddingStart="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/from"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/textFromReservationsSearch"
+        app:layout_constraintEnd_toStartOf="@+id/textFromReservationsSearch"
+        app:layout_constraintHorizontal_weight="25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textFromReservationsSearch" />
+
+    <TextView
+        android:id="@+id/toHint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="end|bottom"
+        android:maxLines="1"
+        android:paddingStart="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/to"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/textToReservationsSearch"
+        app:layout_constraintEnd_toEndOf="@+id/fromHint"
+        app:layout_constraintStart_toStartOf="@+id/fromHint"
+        app:layout_constraintTop_toTopOf="@+id/textToReservationsSearch" />
+
+    <TextView
+        android:id="@+id/calendarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:textColor="#A9FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/reservationsListView"
+        app:layout_constraintEnd_toEndOf="@+id/calendarDatePicker"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="@+id/reservationsListView"
+        app:layout_constraintTop_toTopOf="@+id/calendarDatePicker"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <ImageButton
+        android:id="@+id/sendDetailsEmailBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/send_reservation"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/space2"
+        app:layout_constraintEnd_toStartOf="@+id/space2"
+        app:layout_constraintHorizontal_weight="30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/space2"
+        app:srcCompat="@drawable/emailico" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

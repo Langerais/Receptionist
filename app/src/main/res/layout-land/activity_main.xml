@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_animation_list"
+    tools:context=".MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/reserveImgBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:background="@null"
+        android:paddingHorizontal="30dp"
+        android:contentDescription="@string/reserve_activity"
+        android:onClick="goToReserve"
+        android:scaleType="fitCenter"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reservationsBtn"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1"
+        app:srcCompat="@mipmap/reservesign" />
+
+    <ImageButton
+        android:id="@+id/reservationsBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="30dp"
+        android:alpha="0.8"
+        android:background="@null"
+        android:contentDescription="@string/reservations_calendar"
+        android:onClick="goToCalendar"
+        android:scaleType="fitCenter"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/reserveImgBtn"
+        app:layout_constraintEnd_toStartOf="@+id/guestListImgBtn"
+        app:layout_constraintStart_toEndOf="@+id/reserveImgBtn"
+        app:layout_constraintTop_toTopOf="@+id/reserveImgBtn"
+        app:srcCompat="@mipmap/calendar" />
+
+    <ImageButton
+        android:id="@+id/guestListImgBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.8"
+        android:background="@null"
+        android:contentDescription="@string/guests_database"
+        android:paddingHorizontal="30dp"
+        android:onClick="goToGuests"
+        android:scaleType="fitCenter"
+        android:tint="@drawable/touch_selector"
+
+
+        app:layout_constraintBottom_toBottomOf="@id/reservationsBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/reservationsBtn"
+        app:layout_constraintTop_toTopOf="@+id/reservationsBtn"
+
+        app:srcCompat="@mipmap/guest_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

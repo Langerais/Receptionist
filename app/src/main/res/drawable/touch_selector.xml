@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Highlights button on press -->
+
+    <item android:state_pressed="true" android:color="#63FFFFFF"/>
+    <item android:state_activated="true" android:color="#00FFFFFF"/>
+    <item android:color="#00FFFFFF"/>
+
+</selector>

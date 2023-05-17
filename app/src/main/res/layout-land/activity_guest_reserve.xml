@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/guestReserve"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_animation_list"
+    tools:context=".GuestReserveActivity">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/existingGuestInputGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="pickFromListBtn,textName,textSurname,textPhone,textEmail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/newGuestInputGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="textInputLayoutName,textInputLayoutSurname,textInputLayoutEmail,textInputLayoutPhone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFromReserve"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/textFromS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textFromS"
+        app:layout_constraintTop_toTopOf="@+id/textFromS" />
+
+    <TextView
+        android:id="@+id/textViewToReserve"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/textToS"
+        app:layout_constraintEnd_toEndOf="@+id/textViewFromReserve"
+        app:layout_constraintStart_toStartOf="@+id/textViewFromReserve"
+        app:layout_constraintTop_toTopOf="@+id/textToS" />
+
+    <TextView
+        android:id="@+id/textViewPriceReserve"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center|start"
+        android:maxLines="1"
+        android:text="1324"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalReservationText"
+        app:layout_constraintEnd_toEndOf="@id/textInputLayoutSurname"
+        app:layout_constraintStart_toEndOf="@+id/totalReservationText"
+        app:layout_constraintTop_toTopOf="@+id/totalReservationText" />
+
+    <TextView
+        android:id="@+id/textViewNumberReserve"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/textRoomS"
+        app:layout_constraintEnd_toStartOf="@id/divider7"
+        app:layout_constraintStart_toEndOf="@id/textRoomS"
+        app:layout_constraintTop_toTopOf="@+id/textRoomS" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/textGuestS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textToS"
+        app:layout_constraintVertical_bias="0.191" />
+
+    <TextView
+        android:id="@+id/textFromS"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:maxLines="1"
+        android:text="@string/from"
+        app:layout_constraintBottom_toTopOf="@+id/textToS"
+        app:layout_constraintEnd_toStartOf="@id/textViewFromReserve"
+        app:layout_constraintStart_toEndOf="@id/divider7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="10" />
+
+    <TextView
+        android:id="@+id/textRoomS"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:layout_margin="26dp"
+        android:text="@string/room"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divider5"
+        app:layout_constraintEnd_toStartOf="@+id/textViewNumberReserve"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textToS"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:maxLines="1"
+        android:text="@string/to"
+        app:layout_constraintBottom_toTopOf="@+id/divider5"
+        app:layout_constraintEnd_toEndOf="@+id/textFromS"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textFromS"
+        app:layout_constraintTop_toBottomOf="@+id/textFromS"
+        app:layout_constraintVertical_bias="0.507"
+        app:layout_constraintVertical_weight="10" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/nightsReservationText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhone" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintVertical_weight="15"
+        app:layout_constraintEnd_toStartOf="@id/textInputLayoutSurname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newGuestSwitch"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayoutEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/nameSt"
+            android:inputType="textCapWords"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutSurname"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayoutName"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayoutName"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/surnameSt"
+            android:inputType="textPersonName|textCapWords"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutEmail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayoutPhone"
+        app:layout_constraintEnd_toStartOf="@+id/bookBtnFinal"
+        app:layout_constraintHorizontal_weight="20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName"
+        app:layout_constraintVertical_weight="15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPhone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:counterEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutEmail"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayoutEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail"
+        app:layout_constraintVertical_weight="15">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:textAlignment="viewStart"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textGuestS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/guest"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/newGuestSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="70"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider5"
+        app:layout_constraintVertical_weight="10" />
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/divider5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalReservationText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center|end"
+        android:maxLines="1"
+        android:text="@string/total"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/nightsReservationText"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPriceReserve"
+        app:layout_constraintStart_toEndOf="@+id/textGuestS"
+        app:layout_constraintTop_toTopOf="@+id/nightsReservationText" />
+
+    <TextView
+        android:id="@+id/nightsReservationText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center|end"
+        android:maxLines="1"
+        android:text="@string/nights"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/textGuestS"
+        app:layout_constraintEnd_toStartOf="@+id/textNightsReserve"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider5"
+        app:layout_constraintVertical_weight="10" />
+
+    <TextView
+        android:id="@+id/textNightsReserve"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center|start"
+        android:maxLines="1"
+        android:text="15"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/nightsReservationText"
+        app:layout_constraintEnd_toStartOf="@+id/textGuestS"
+        app:layout_constraintHorizontal_weight="10"
+        app:layout_constraintStart_toEndOf="@+id/nightsReservationText"
+        app:layout_constraintTop_toTopOf="@+id/nightsReservationText" />
+
+    <ImageButton
+        android:id="@+id/bookBtnFinal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/create_new_reservation"
+        android:scaleType="fitCenter"
+        android:soundEffectsEnabled="true"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPriceReserve"
+        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintStart_toStartOf="@+id/textViewPriceReserve"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSurname"
+        app:srcCompat="@drawable/book_4" />
+
+    <ImageButton
+        android:id="@+id/pickFromListBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/pick_existing_guest"
+        android:paddingBottom="10dp"
+        android:scaleType="fitCenter"
+        android:tint="@drawable/touch_selector"
+        app:layout_constraintBottom_toTopOf="@id/textName"
+        app:layout_constraintEnd_toStartOf="@+id/totalReservationText"
+        app:layout_constraintStart_toEndOf="@+id/textNightsReserve"
+        app:layout_constraintTop_toBottomOf="@+id/newGuestSwitch"
+        app:layout_constraintVertical_weight="35"
+        app:srcCompat="@drawable/guest_list" />
+
+    <ToggleButton
+        android:id="@+id/newGuestSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_weight="10"
+        android:checked="false"
+        android:contentDescription="@string/create_new_guest_or_import_existing"
+        android:fontFamily="sans-serif-smallcaps"
+        android:showText="true"
+        android:splitTrack="false"
+        android:textAlignment="center"
+        android:textOff="@string/New"
+        android:textOn="@string/existing"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayoutName"
+        app:layout_constraintEnd_toEndOf="@+id/textGuestS"
+        app:layout_constraintStart_toStartOf="@+id/textGuestS"
+        app:layout_constraintTop_toBottomOf="@+id/textGuestS" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center|end"
+        android:text="@string/nan"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toTopOf="@+id/textEmail"
+        app:layout_constraintEnd_toStartOf="@+id/textSurname"
+        app:layout_constraintStart_toStartOf="@+id/textNightsReserve"
+        app:layout_constraintTop_toBottomOf="@+id/pickFromListBtn"
+        app:layout_constraintVertical_weight="25" />
+
+    <TextView
+        android:id="@+id/textSurname"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center|start"
+        android:text="@string/nan"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="@+id/textName"
+        app:layout_constraintEnd_toEndOf="@+id/totalReservationText"
+        app:layout_constraintStart_toEndOf="@id/textName"
+        app:layout_constraintTop_toTopOf="@+id/textName" />
+
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/nan"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/textPhone"
+        app:layout_constraintEnd_toEndOf="@+id/textSurname"
+        app:layout_constraintStart_toStartOf="@+id/textName"
+        app:layout_constraintTop_toBottomOf="@+id/textName"
+        app:layout_constraintVertical_weight="25" />
+
+    <TextView
+        android:id="@+id/textPhone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/nan"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/textEmail"
+        app:layout_constraintStart_toStartOf="@id/textEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textEmail"
+        app:layout_constraintVertical_weight="25" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
